@@ -20,7 +20,7 @@ namespace ajinomoto_app.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("Views/Home/Index.cshtml");
         }
 
         public IActionResult Privacy()
