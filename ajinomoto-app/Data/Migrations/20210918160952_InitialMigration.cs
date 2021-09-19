@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace ajinomoto_app.Migrations
+namespace ajinomoto_app.Data.Migrations
 {
     public partial class InitialMigration : Migration
     {
