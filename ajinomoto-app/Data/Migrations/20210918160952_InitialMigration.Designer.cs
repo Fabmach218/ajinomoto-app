@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ajinomoto_app.Data;
 
-namespace ajinomoto_app.Migrations
+namespace ajinomoto_app.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210918160952_InitialMigration")]
