@@ -1,0 +1,145 @@
+html {
+
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+  /*** Globales ***/
+
+  
+  .container {
+
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+
+  }
+
+  img {
+
+     width: 100%;
+
+  }
+
+  
+
+
+  /* SECCION HEAD */
+
+
+  .bg-color {
+
+     background-color: white ;
+
+  }
+
+  .flex-colum{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .flex__img {
+
+     max-width: 100%;
+     width: 10%;
+
+  }
+
+  .flex__nav a {
+  
+   text-decoration: none;
+   font-size: 2rem;
+   color: red;
+   font-weight: 900;
+   font-family: 'Lato', sans-serif;
+   margin-right: 2rem;
+  
+  }
+
+  .parrilla:hover {
+
+      cursor: pointer;
+  }
+
+  .nav-columna a {
+
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+
+  }
+
+  .mostrar  {
+    
+     display: block!important;
+
+  }
+
+  .mostrar a {
+
+    transition: opacity 1s ease;
+  }
+
+  .vere {
+ 
+   position: absolute;
+   
+  }
+
+
+  @media(min-width: 0px){
+
+    .altura {
+    
+        height: 20rem;
+
+    }
+
+  
+
+  }
+
+  @media(min-width: 768px){
+
+    .altura {
+    
+        height: 30rem;
+
+    }
+
+    
+
+  }
+
+  @media(min-width: 1140px){
+
+    .altura {
+    
+        height: 45rem;
+
+    }
+
+  }
+
+
+  .parrilla {
+
+    display: none;
+
+  }
