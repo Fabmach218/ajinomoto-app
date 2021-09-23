@@ -9,45 +9,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/styles.css" />
 </head>
-<body onresize="tamaño();">
+<body >
 
-     <header id="header" class="bg-color">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+    <div class="container px-5">
+        <img class="flex__img" src="~/img/logo.png" alt="Icono de Ajinomoto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fd0061" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="20" y2="18" />
+</svg></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 centrar">
+                <li class="nav-item"><a class="nav-link color" aria-current="page" href="#!">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link color" href="#!">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link color" href="#!">Productos</a></li>
+                <li class="nav-item"><a class="nav-link color" href="#!">Contactanos</a></li>
 
-        <div class="container flex">
-        
-            <img class="flex__img" src="~/img/logo.png" alt="Icono de Ajinomoto">
+                 <partial name="_LoginPartial" />
 
-        <div class="parrilla">
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <line x1="4" y1="6" x2="20" y2="6" />
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <line x1="4" y1="18" x2="20" y2="18" />
-              </svg>
-           
+            </ul>
         </div>
-
-        <nav class="flex__nav">
-
-            <a href="#">Inicio</a>
-            <a href="#">Sobre Nosotros</a>
-            <a href="#">Productos</a>
-            <a href="#">Contáctanos</a>
-
-             <partial name="_LoginPartial" />
-
-
-          </nav>
-
-        </div>
-
-        <div class="nav-columna">
-
-        </div>
-
-
-    </header>
+    </div>
+</nav>
    
     <div>
         <main role="main" class="">
