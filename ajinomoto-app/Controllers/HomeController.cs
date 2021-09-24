@@ -28,6 +28,11 @@ namespace ajinomoto_app.Controllers
             return View();
         }
 
+        public IActionResult Nosotros()
+        {
+            return View("Views/Nosotros/Nosotros.cshtml");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
