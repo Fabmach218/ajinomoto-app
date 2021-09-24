@@ -33,6 +33,13 @@ namespace ajinomoto_app.Controllers
             return View("Views/Nosotros/Nosotros.cshtml");
         }
 
+        public IActionResult Contactanos()
+        {
+            return View("Views/Contactanos/Contactanos.cshtml");
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
