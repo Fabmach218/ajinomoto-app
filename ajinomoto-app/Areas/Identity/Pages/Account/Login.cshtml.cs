@@ -98,7 +98,7 @@ namespace ajinomoto_app.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "¡¡¡Correo o contraseña incorrectos!!!");
                     return Page();
                 }
             }
