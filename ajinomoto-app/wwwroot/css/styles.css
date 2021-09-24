@@ -11,6 +11,17 @@ html {
 
   /*** Globales ***/
 
+  .colores {
+ 
+    background-color: yellow;
+
+  }
+
+  h3 {
+
+    font-size: 2rem;
+    font-weight: bold;
+  }
   
   .container {
 
@@ -19,6 +30,43 @@ html {
     width: 95%;
 
   }
+
+  .tamaño {
+
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+  }
+
+  .create {
+
+    max-width: 70rem;
+    margin: 0 auto;
+    width: 95%;
+
+  }
+
+  fieldset {
+    background-color: #eeeeee;
+    padding: 5rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+  }
+
+  
+
+  label {
+
+    font-size: 2rem;
+  }
+
+ 
+
+button {
+
+  font-size: 2rem!important;
+  color: azure!important;
+}
 
   img {
 
@@ -38,7 +86,7 @@ html {
 
   .bg-color {
 
-     background-color: white ;
+     background-color:yellow ;
 
   }
 
