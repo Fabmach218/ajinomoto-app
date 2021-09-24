@@ -31,6 +31,15 @@ html {
 
   }
 
+  footer {
+
+    position:fixed;
+    bottom:0px;
+    height:12%;
+    width:100%;
+   
+  }
+
   .tamaño {
 
     padding: 1rem;
@@ -154,5 +163,17 @@ button {
   }
 
   
+  .flex-footer {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
   
+  .text {
+
+    font-size: 2rem;
+
+  }
   
