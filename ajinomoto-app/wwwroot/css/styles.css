@@ -1,5 +1,7 @@
 html {
-
+    
+    position: relative;
+    min-height: 100%;
     font-size: 62.5%;
     box-sizing: border-box;
 
@@ -8,6 +10,10 @@ html {
     box-sizing: inherit;
   }
 
+  body {
+    margin: 0;
+    margin-bottom: 5rem;
+  }
 
   /*** Globales ***/
 
@@ -29,6 +35,17 @@ html {
     margin: 0 auto;
     width: 95%;
 
+  }
+
+  footer {
+
+    
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+ 
+  
   }
 
   .tamaño {
@@ -93,7 +110,7 @@ button {
   
   .flex__img {
 
-     max-width: 100%;
+   
      width: 10%;
 
   }
@@ -154,5 +171,17 @@ button {
   }
 
   
+  .flex-footer {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
   
+  .text {
+
+    font-size: 2rem;
+
+  }
   
