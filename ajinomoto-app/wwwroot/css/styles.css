@@ -84,9 +84,9 @@ html {
 
   .tamaño {
 
-    padding: 1rem;
+    padding: .2rem;
     border-radius: 1rem;
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
   .create {
