@@ -15,7 +15,7 @@ function redireccion(){
 
 function redirect(){
 
-    window.location.href = "https://localhost:5001/";
+    window.location.href = "https://app-ajinomoto.herokuapp.com/";
 
   }
 
