@@ -17,14 +17,14 @@
                                 <div class="card-body">
                                     <div class="card-img-actions">
                                         <img class="img-responsive" width="90" height="140"
-                                        src="" alt=""/>
+                                        src="/img/@item.Imagen" alt="@item.Imagen"/>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-tittle">@Html.DisplayFor(modelItem => item.Nombre)</h5>
                                     <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
                                     <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">AGREGAR</a>
-                                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">VISTA</a>
+                                    <a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.Id">VISTA</a>
                                 </div>
                             </div>
                         </div>
