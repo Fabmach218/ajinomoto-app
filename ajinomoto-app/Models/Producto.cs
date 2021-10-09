@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ajinomoto_app.Models
 {
-    public class Producto
-    {
+
         [Table("t_producto")]
         public class Producto
         {
@@ -21,5 +20,4 @@ namespace ajinomoto_app.Models
             [Column("imagen")]
             public string Imagen { get; set; }            
         }
-    }
 }
