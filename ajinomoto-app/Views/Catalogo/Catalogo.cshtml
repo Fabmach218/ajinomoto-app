@@ -1,0 +1,33 @@
+@model IEnumerable<ajinomoto-app.Models.Producto>
+
+@{
+    ViewData["Tittle"] = "Catalogo";
+}
+
+<h1>@ViewData["Tittle"]</h1>
+<div class="container">
+    <h1>@ViewData["Message"]</h1>
+    <div class="row">
+        <div class="col">
+            <div id="productos" class="mb-3">
+                <div class="row">
+                    @foreach (var item in Model){
+                        <div class="col-sm-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="card-img-actions">
+                                        <img class="img-responsive" width="96" height="150"
+                                        src="" alt=""/>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
