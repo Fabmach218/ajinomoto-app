@@ -12,5 +12,6 @@ namespace ajinomoto_app.Data
             : base(options)
         {
         }
+        public DbSet<ajinomoto_app.Models.Producto> DataProductos { get; set; }
     }
 }
