@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace ajinomoto_app.Controllers
 {
@@ -32,7 +33,38 @@ namespace ajinomoto_app.Controllers
             if(objProducto == null){
                 return NotFound();
             }
+
+            ViewBag.MyRouteId = id;
             return View(objProducto);
         }
+        
+     
+         public async Task<IActionResult> Agregar( int id)
+        {   
+          
+           Console.WriteLine(id);
+
+            var userID = _userManager.GetUserName(User);
+            if(userID == null){
+                ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
+                List<Producto> productos = new List<Producto>();
+                return  View("Index",productos);
+            }else{
+                var producto = _context.DataProductos.Find(id);
+                Proforma proforma = new Proforma();
+                proforma.Producto = producto;
+                proforma.Price = producto.Precio;
+                proforma.Quantity = 1;
+                proforma.UserID = userID;
+                _context.Add(proforma);
+                await _context.SaveChangesAsync();
+                return  RedirectToAction(nameof(Catalogo));
+            }
+        }
+       
+    
+       
+     
+
     }
 }

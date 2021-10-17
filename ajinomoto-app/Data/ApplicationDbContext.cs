@@ -13,5 +13,7 @@ namespace ajinomoto_app.Data
         {
         }
         public DbSet<ajinomoto_app.Models.Producto> DataProductos { get; set; }
+
+        public DbSet<ajinomoto_app.Models.Proforma> DataProforma {get; set; }
     }
 }
