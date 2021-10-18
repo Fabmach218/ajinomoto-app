@@ -10,7 +10,7 @@
 
 <h1>Carrito</h1>
 
-<a class="btn btn-primary" asp-controller="Pago" asp-action="Create">Pagar</a><p>Total: S/. @montoTotal</p>
+<a class="btn btn-primary" asp-controller="Pago" asp-action="Create" asp-route-MontoTotal="@montoTotal">Pagar</a><p>Total: S/. @montoTotal</p>
 
 <table class="table">
     <thead>
