@@ -1,29 +1,34 @@
-@model IEnumerable<ajinomoto_app.Models.Proforma>
+@model dynamic;
+@using System.Collections.Generic;
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Carrito";
+    IEnumerable<ajinomoto_app.Models.Proforma> listProformas = new List<Proforma>();
+    listProformas = @Model.proformas;
+    Decimal montoTotal = @Model.montoTotal;
 }
 
 <h1>Carrito</h1>
 
+<a class="btn btn-primary" asp-controller="Pago" asp-action="Create">Pagar</a><p>Total: S/. @montoTotal</p>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Producto.Nombre)
+                @Html.DisplayNameFor(model => listProformas.FirstOrDefault().Producto.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+                @Html.DisplayNameFor(model => listProformas.FirstOrDefault().Quantity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => listProformas.FirstOrDefault().Price)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (Proforma item in Model.proformas) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Producto.Nombre)
