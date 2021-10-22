@@ -14,3 +14,24 @@
         <h9 data-aos="fade-in"></h9>
         </div>
 
+<form>
+    <div class="row">
+     <h9>Seleccione un metodo de pago para que lo redireccione:</h9>
+
+        <div class="form-group"> 
+                <input type="checkbox" name = "pagoEfectivo" class = "form-control" onchange= "window.location.replace('/PagoEfectivo/pagoefectivo')">
+                
+        </div> 
+
+        <div class="form-group"> 
+                <input type="checkbox" name = "pagoTarjeta" class = "form-control" onchange= "window.location.replace('/PagoTarjeta/pagotarjeta')">
+        </div>
+
+        <div class="form-group">
+        <span class="hide" id="msg_rut" style="color:black; position: absolute;margin-top: 45px; margin-left: -200px;">Pago Efectivo</span>
+        </div>
+
+        <div class="form-group">
+        <span class="hide" id="msg_rut" style="color:black; position: absolute;margin-top: 98px; margin-left: -200px;">Pago por Tarjeta Visa o Mastercard</span>
+         </div> 
+</form>
