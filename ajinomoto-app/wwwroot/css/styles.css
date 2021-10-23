@@ -546,3 +546,13 @@ button {
     position: absolute;
     right: 15px;
   }
+
+  .formcontainer{
+    width: 4500px;
+    margin: auto;
+    background: rgba(0 ,0 , 0 , 4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+  }
