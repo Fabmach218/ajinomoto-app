@@ -13,6 +13,7 @@
 </head>
 <body onload="redireccion();">
 
+
      <nav class="navbar navbar-expand-lg navbar-dark bg-white">
     <div class="container px-5">
         <img class="flex__img" src="~/img/logo.png" alt="Icono de Ajinomoto">
@@ -22,48 +23,79 @@
   <line x1="4" y1="12" x2="20" y2="12" />
   <line x1="4" y1="18" x2="20" y2="18" />
 </svg></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <nav class="nav-menu d-none d-lg-block">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 centrar">
-                <li class="nav-item"><a class="nav-link color" aria-current="page" asp-controller="Home" asp-action="Index">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link color" asp-controller="Home" asp-action="Nosotros">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link color" asp-controller="Home" asp-action="Contactanos">Contactanos</a></li>
-                <li class="nav-item"><a class="nav-link color" asp-controller="Catalogo" asp-action="Catalogo">Catalogo</a></li>    
+                <li class="nav-item"><a class="nav-link color" aria-current="page" asp-controller="Home" asp-action="Index">INICIO</a></li>
+                <li class="nav-item"><a class="nav-link color" asp-controller="Home" asp-action="Nosotros">NOSOTROS</a></li>
+                <li class="nav-item"><a class="nav-link color" asp-controller="Home" asp-action="Contactanos">CONTÁCTANOS</a></li>
+                <li class="nav-item"><a class="nav-link color" asp-controller="Catalogo" asp-action="Catalogo">CATÁLOGO</a></li>    
                  <partial name="_LoginPartial" />
 
             </ul>
-        </div>
+        </nav>
+        
     </div>
    
 </nav>
  <hr />
 
+
+<br>
+<br>
+<br>
    
     <div>
         <main role="main">
             @RenderBody()
         </main>
     </div>
+<br>
+<br>
+<br>
 
+    <section id="cta" class="cta">
+        <div class="container">
+          <div class="text-center">
+            <h3>¿YA TIENES UNA CUENTA?</h3>
+            <a class="cta-btn" href="">¡INGRESA AHORA MISMO!</a>
+          </div>
+        </div>
+    </section>
     
-   <footer>
+<br>
+<br>
+<br>
 
-    <hr>
+<footer id="footer">
 
-     <div class="flex-footer container">
-     
-       <p class="text">Ajinomoto del Perú S.A. <br> Todos los derechos reservados </p>
-       
-     
-       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <rect x="3" y="5" width="18" height="14" rx="2" />
-  <polyline points="3 7 12 13 21 7" />
-</svg>
+    <div class="footer-top">
+        <div class="container">
 
-     </div>
+        <div class="row">
 
+          <div>
+            <div class="footer-info">
+              <center>
+                <h3>AJINOMOTO</h3>   
+                <p>
+                PERÚ<br><br>
+                  <strong>TELÉFONO:</strong> 014485978<br>
+                  <strong>CORREO:</strong>ajinomotoperu@ajino.pe<br>
+                </p>
+              </center>           
+            </div>
 
-   </footer>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>AjinomotoPerú</strong>
+      </div>
+    </div>
+
+</footer>
 
   
        <script src="~/lib/jquery/dist/jquery.min.js"></script>
