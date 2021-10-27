@@ -17,7 +17,7 @@
         <h2 aling = "center "data-aos="fade-in">Pago con Tarjeta</h2>
         </div>
 		<!-- Formulario -->
-		<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+		<form method="post" asp-action="Pagar" id="formulario-tarjeta" class="formulario-tarjeta">
 			<div class="grupo">
 				<label>Monto a pagar</label>
 				<input type="text" asp-for="MontoTotal" data-thousands="," data-decimal="." maxlength="8" autocomplete="off" disabled/>
