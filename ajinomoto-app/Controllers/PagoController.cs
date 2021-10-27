@@ -32,10 +32,6 @@ namespace ajinomoto_app.Controllers
             return View(pago);
         }
 
-        public IActionResult Tarjeta(){
-            return View();
-        }
-
 
     }
 }
