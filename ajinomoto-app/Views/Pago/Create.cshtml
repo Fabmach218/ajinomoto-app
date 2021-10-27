@@ -20,7 +20,7 @@
 		<form method="post" asp-action="Pagar" id="formulario-tarjeta" class="formulario-tarjeta">
 			<div class="grupo">
 				<label>Monto a pagar</label>
-				<input type="text" asp-for="MontoTotal" data-thousands="," data-decimal="." maxlength="8" autocomplete="off" disabled/>
+				<input type="text" asp-for="MontoTotal" data-thousands="," data-decimal="." maxlength="8" autocomplete="off" readonly/>
 			</div>
 			
 			<div class="grupo">
@@ -75,6 +75,7 @@
 			<button type="submit" class="btn btn-primary text-white">Enviar</button>
 		</form>
 		
+		<h3>@ViewData["Message"]</h3>
 
 		<br><br><br>
 		<a href="/MEtodoPago/metodopago" class="btn btn-primary text-white"  aling = "">VOLVER</a> 

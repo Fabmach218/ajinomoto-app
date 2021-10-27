@@ -27,7 +27,6 @@ namespace ajinomoto_app.Controllers
         public IActionResult Create(Decimal MontoTotal)
         {
             Pago pago = new Pago();
-            pago.UserID = _userManager.GetUserName(User);
             pago.MontoTotal = MontoTotal;
             return View(pago);
         }
@@ -36,6 +35,7 @@ namespace ajinomoto_app.Controllers
         public IActionResult Pagar(Pago pago){
             
             pago.FechaPago = DateTime.Now;
+            pago.UserID = _userManager.GetUserName(User);
             _context.Add(pago);
 
             var itemsProforma = from o in _context.DataProforma select o;
