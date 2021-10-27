@@ -17,5 +17,9 @@ namespace ajinomoto_app.Data
         public DbSet<ajinomoto_app.Models.Proforma> DataProforma {get; set; }
 
         public DbSet<ajinomoto_app.Models.Pago> DataPago {get; set; }
+
+        public DbSet<ajinomoto_app.Models.Pedido> DataPedidos {get; set; }
+        
+        public DbSet<ajinomoto_app.Models.DetallePedido> DataDetallePedidos {get; set; }
     }
 }
