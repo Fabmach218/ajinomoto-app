@@ -16,70 +16,49 @@
 
  </section>
 
-  <br>
-  <br>
+ <section style="background-color: black;">
 
- <section>
-            <div class="section-title">
-                <h2>¿DESEAS CONTACTARTE CON NOSOTROS?</h2>
-                <center><p>DÉJANOS TU COMENTARIO</p></center>
-            </div>
-             <div class="formcontainer">
-                <form action="action_page.php">
+        <div class="formcontainer">
+              <form action="action_page.php">
 
-                    <label for="nombre">Tu nombre:</label>
-                    <input type="text" id="nombre" name="firstname" placeholder="Tu nombre">
+                    <label for="nombre" style="color: white;">Tu nombre:</label>
+                    <input type="text" id="nombre" name="firstname" style="font-size:16px ;">
 
-                    <label for="correo">Correo:</label>
-                    <input type="text" id="correo" name="lastname" placeholder="ab@ajimoto.pe">
+                    <label for="correo" style="color: white;">Correo:</label>
+                    <input type="text" id="correo" name="lastname" placeholder="ab@ajimoto.pe" style="font-size:16px ;">
 
-                    <label for="pais">País</label>
-                    <select id="country" name="country">
+                    <label for="pais" style="color: white;">País</label>
+                    <select id="country" name="country" style="font-size:16px ;">
                     <option value="australia">Perú</option>
                     <option value="canada">Brasil</option>
                     <option value="usa">Chile</option>
                     </select>
 
-                    <label for="comentario">Comentario</label>
-                    <textarea id="comentario" name="comentario" placeholder="Escribe algo.." style="height:200px"></textarea>
+                    <label for="comentario" style="color: white;">Comentario</label>
+                    <textarea id="comentario" name="comentario" placeholder="Escribe algo.."></textarea>
 
-                     <section id="cta" class="cta">
+                     <sectio id="cta" class="cta">
 
                     
-                    <div class="container" data-aos="zoom-in">
-                    <div class="text-center">
-                            <h3>CONTÁCTANOS</h3>
-                            <a class="cta-btn" asp-area="Identity" asp-page="/Views/Contactanos/Confirmacion">ENVIAR</a>
-                            <script type="text/javascript">
-                                function clicked() {
-                                  if (confirm('Do you want to submit?')) {
-                                      yourformelement.submit();
-                                  } else {
-                                      return false;
+                    <div>
+                      <div>
+                              <a class="cta-btn" asp-area="Identity" asp-page="/Views/Contactanos/Confirmacion">ENVIAR</a>
+                              <script type="text/javascript">
+                                  function clicked() {
+                                    if (confirm('Do you want to submit?')) {
+                                        yourformelement.submit();
+                                    } else {
+                                        return false;
+                                    }
                                   }
-                                }
-
-                            </script>
-                    </div>
+                              </script>
+                      </div>
                     </div>
 
-                </section>
-
-                </form>
+              </form>
             </div>           
-    </div>
+  
 
  </section>
-
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 </body>
