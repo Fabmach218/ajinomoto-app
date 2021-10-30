@@ -4,7 +4,16 @@
 
 
 @if (SignInManager.IsSignedIn(User))
-{
+{ 
+
+     IdentityUser myidentity = await Task.Run(() => UserManager.GetUserAsync(User));
+    var roles = await Task.Run(() => UserManager.GetRolesAsync(myidentity));
+
+    if(roles.Contains("Admin")){
+
+        
+    }
+
       
     <li class="nav-item">
 
