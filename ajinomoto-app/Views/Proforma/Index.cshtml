@@ -8,21 +8,29 @@
     Decimal montoTotal = @Model.montoTotal;
 }
 
-<h1>Carrito</h1>
+    <section id="hero3" class="d-flex align-items-center justify-content-center" style="height: 18px;">
+<h1>TU CARRITO</h1>
 
-<a class="btn btn-primary" asp-controller="Pago" asp-action="Create" asp-route-MontoTotal="@montoTotal">Pagar</a><p>Total: S/. @montoTotal</p>
+    </section>
+<br>
+<br>
+<a class="btn btn-success" asp-controller="Pago" asp-action="Create" asp-route-MontoTotal="@montoTotal" style="font-size: 20px;">PAGAR</a>
+<br>
+<br>
 
-<table class="table">
-    <thead>
+    <div class="container" >
+        <div id="contenedor-tabla" class="table-responsive-md">
+<table class="table table-striped " style="font-size: 18px;">
+    <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => listProformas.FirstOrDefault().Producto.Nombre)
+                NOMBRE
             </th>
             <th>
-                @Html.DisplayNameFor(model => listProformas.FirstOrDefault().Quantity)
+                CANTIDAD
             </th>
             <th>
-                @Html.DisplayNameFor(model => listProformas.FirstOrDefault().Price)
+                PRECIO
             </th>
             <th></th>
         </tr>
@@ -40,10 +48,18 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="font-size: 15px;">EDITAR</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" style="font-size: 15px;">ELIMINAR</a>
             </td>
         </tr>
 }
     </tbody>
 </table> 
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <center><div>
+        <strong><p style="font-size: 50px;">MONTO TOTAL: S/. @montoTotal</p></strong>
+    </div></center>

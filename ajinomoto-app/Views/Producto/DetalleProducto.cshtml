@@ -4,12 +4,15 @@
     ViewData["Title"] = "DETALLE PRODUCTO";
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <section id="hero4" class="d-flex align-items-center justify-content-center" style="height: 18px;">
 <h1>DETALLE DEL PRODUCTO</h1>
 
+    </section>
+
 <div>
-    <h4>Product</h4>
+
     <hr />
-    <dl class="row">
+    <center><dl class="row" style="font-size: 18px;">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
@@ -35,8 +38,12 @@
             @Html.DisplayFor(model => model.Imagen)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="EditarProducto" asp-route-id="@Model.Id" class="btn btn-primary">EDITAR</a> |
-    <a asp-action="ListarProducto" class="btn btn-info">VOLVER A LA LISTA</a>
+</div></center>
+<br>
+<center><div>
+    <a asp-action="EditarProducto" asp-route-id="@Model.Id" class="btn btn-primary" style="font-size: 20px;">EDITAR</a>
+    </div></center>
+    <br>
+  <div>
+    <a asp-action="ListarProducto" class="btn btn-info" style="font-size: 15px;">LISTA DE PRODUCTOS</a>
 </div>

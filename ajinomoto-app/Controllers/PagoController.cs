@@ -69,7 +69,7 @@ namespace ajinomoto_app.Controllers
 
             _context.SaveChanges();
 
-            ViewData["Message"] = "El pago se ha registrado";
+            ViewData["Message"] = "¡PAGO REALIZADO!";
             return View("Create");
 
 

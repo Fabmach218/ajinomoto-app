@@ -234,6 +234,40 @@ button {
     position: relative;
   }
 
+  #hero3 {
+    width: 100%;
+    height: 100vh;
+    background: url("https://images7.alphacoders.com/883/thumb-1920-883562.jpg") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+  #hero3 h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: rgb(252, 249, 249);
+    font-family: "Poppins", sans-serif;
+  }
+
+  #hero4 {
+    width: 100%;
+    height: 100vh;
+    background: url("https://images7.alphacoders.com/106/thumb-1920-1069291.jpg") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+  #hero4 h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: rgb(252, 249, 249);
+    font-family: "Poppins", sans-serif;
+  }
+
   #header {
     width: 100%;
     height: 100vh;
@@ -244,7 +278,7 @@ button {
   
   #hero:before {
     content: "";
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(56, 56, 56, 0.6);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -263,12 +297,12 @@ button {
     font-size: 56px;
     font-weight: 700;
     line-height: 64px;
-    color: #fff;
+    color: rgb(252, 249, 249);
     font-family: "Poppins", sans-serif;
   }
   
   #hero h1 span {
-    color: #ffc451;
+    color: #eeecec;
   }
   
   #hero h2 {
@@ -280,7 +314,7 @@ button {
   #hero .icon-box {
     padding: 30px 20px;
     transition: ease-in-out 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(255, 255, 255);
     height: 100%;
     text-align: center;
   }
@@ -668,7 +702,7 @@ button {
   }
   
   .section-title h2 {
-    font-size: 14px;
+    font-size: 30px;
     font-weight: 500;
     padding: 0;
     line-height: 1px;
