@@ -27,5 +27,5 @@ namespace ajinomoto_app.Models
         public String UserID{ get; set; }
 
     
-}
+    }
 }
