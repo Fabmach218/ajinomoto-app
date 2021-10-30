@@ -59,6 +59,10 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
+        public IActionResult ElegirAccion(){
+            return View();
+        }
+
         public async Task<IActionResult> EditarProducto(int? id)
         {
             if (id == null)
@@ -106,29 +110,12 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
-        public async Task<IActionResult> EliminarProducto(int? id)
+  
+
+        public async Task<IActionResult> Eliminar(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var producto = await _context.DataProductos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            return View(producto);
-        }
-
-        [HttpPost, ActionName("EliminarProducto")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var producto = await _context.DataProductos.FindAsync(id);
-            _context.DataProductos.Remove(producto);
+            var product = await _context.DataProductos.FindAsync(id);
+            _context.DataProductos.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(ListarProducto));
         }

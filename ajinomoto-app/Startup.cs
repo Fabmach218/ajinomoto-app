@@ -12,6 +12,7 @@ using ajinomoto_app.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace ajinomoto_app
 {

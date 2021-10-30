@@ -3,14 +3,19 @@
 @{
     ViewData["Title"] = "LISTAR";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <section id="hero" class="d-flex align-items-center justify-content-center" style="height: 10px;">
+<h1>LISTA DE PRODUCTOS</h1>
 
-<h1>Index</h1>
+    </section>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="RegistrarProducto">REGISTRAR NUEVO PRODUCTO</a>
 </p>
-<table class="table">
-    <thead>
+    <div class="container" >
+        <div id="contenedor-tabla" class="table-responsive-md">
+            <table class="table table-striped " style="font-size: 16px;">
+                <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
@@ -43,11 +48,15 @@
                 @Html.DisplayFor(modelItem => item.Imagen)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">EDITAR</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">DETALLES</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">ELIMINAR</a>
+
+                <a asp-action="EditarProducto" asp-route-id="@item.Id"  class="btn btn-primary">EDITAR</a>
+                <a asp-action="DetalleProducto" asp-route-id="@item.Id" class="btn btn-secondary">DETALLES</a>
+                <a asp-action="Eliminar" asp-route-id="@item.Id" class="btn btn-danger">ELIMINAR</a>
+            
             </td>
         </tr>
 }
-    </tbody>
-</table>
+       </tbody>
+            </table>
+        </div>
+    </div>
