@@ -70,7 +70,7 @@ namespace ajinomoto_app.Controllers
             _context.SaveChanges();
 
             ViewData["Message"] = "¡PAGO REALIZADO!";
-            return View("Create");
+            return View("Confirmacion");
 
 
         }
