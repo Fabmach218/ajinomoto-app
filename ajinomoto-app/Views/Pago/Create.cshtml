@@ -2,8 +2,6 @@
 @{
     ViewData["Title"] = "Pago con Tarjeta - ";
 }
-<<<<<<< HEAD
-<h1>@ViewData["Title"]</h1>
 
 <h1>@ViewData["Title"]</h1>
 
@@ -13,29 +11,8 @@
           <div class="col-sm-10 mt-5">
             <div class="form-group row">
               <h1>Pago</h1>
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pago con tarjeta de credito</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/estilos.css">
-</head>
-<body>
-    <section id="catalogue" class="biografia section-bggg">
-    <div class="contenedor">
-        <div class="section-title">
-        <h2 aling = "center "data-aos="fade-in">Pago con Tarjeta</h2>
-        </div>
-        <!-- Formulario -->
-        <form method="post" asp-action="Pagar" id="formulario-tarjeta" class="formulario-tarjeta">
-            <div class="grupo">
-                <label>Monto a pagar</label>
-                <input type="text" asp-for="MontoTotal" data-thousands="," data-decimal="." maxlength="8" autocomplete="off" readonly/>
->>>>>>> 8be032b585f910f321fd1b2bb7a1c9666beec403
             </div>
-            
+            <form asp-action="Pagar" method="post">
             <div class="grupo">
                 <label for="inputNumero">Número Tarjeta</label>
                 <input type="number" asp-for="NumeroTarjeta" maxlength="16" autocomplete="off">
@@ -84,28 +61,10 @@
                     <label for="inputCCV">CCV</label>
                     <input type="text" asp-for="Cvv" maxlength="3">
                 </div>
-<<<<<<< HEAD
               </div>
             </form>
             <h1>@ViewData["Message"]</h1>
           </div>
         </div>
-    </div
-	
-=======
-            </div>
-            <button type="submit" class="btn btn-primary text-white">Enviar</button>
-        </form>
-        
-        <h3>@ViewData["Message"]</h3>
-
-        <br><br><br>
-        <a href="/MEtodoPago/metodopago" class="btn btn-primary text-white"  aling = "">VOLVER</a> 
-        
     </div>
-
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    <script src="~/js/main.js"></script>
-</body>
-</html>
->>>>>>> 8be032b585f910f321fd1b2bb7a1c9666beec403
+	
