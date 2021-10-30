@@ -12,7 +12,7 @@ using System.Dynamic;
 
 namespace ajinomoto_app.Controllers
 {
-public class PagoController : Controller
+    public class PagoController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
@@ -24,11 +24,58 @@ public class PagoController : Controller
             _userManager = userManager;
         }
 
-        public IActionResult Create()
+        public IActionResult Create(Decimal MontoTotal)
         {
-            return View();
+            Pago pago = new Pago();
+            pago.MontoTotal = MontoTotal;
+            return View(pago);
+        }
+
+        [HttpPost]
+        public IActionResult Pagar(Pago pago){
+            
+            pago.FechaPago = DateTime.Now;
+            pago.UserID = _userManager.GetUserName(User);
+            _context.Add(pago);
+
+            var itemsProforma = from o in _context.DataProforma select o;
+            itemsProforma = itemsProforma.
+                Include(p => p.Producto).
+                Where(p => p.UserID.Equals(pago.UserID) && p.Status.Equals("Pendiente"));
+            
+            Pedido pedido = new Pedido();
+            pedido.UserID = pago.UserID;
+            pedido.Total = pago.MontoTotal;
+            pedido.Pago = pago;
+            _context.Add(pedido);
+
+            List<DetallePedido> itemsPedido = new List<DetallePedido>();
+            foreach(var item in itemsProforma.ToList()){
+                DetallePedido detallePedido = new DetallePedido();
+                detallePedido.Pedido=pedido;
+                detallePedido.Precio = item.Price;
+                detallePedido.Producto = item.Producto;
+                detallePedido.Cantidad = item.Quantity;
+                itemsPedido.Add(detallePedido);
+            }
+
+            _context.AddRange(itemsPedido);
+
+            foreach (Proforma p in itemsProforma.ToList())
+            {
+                p.Status="Procesado";
+            }
+            _context.UpdateRange(itemsProforma);
+
+            _context.SaveChanges();
+
+            ViewData["Message"] = "El pago se ha registrado";
+            return View("Create");
+
+
         }
 
 
     }
+
 }
