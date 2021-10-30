@@ -47,7 +47,6 @@ namespace ajinomoto_app.Controllers
             pedido.UserID = pago.UserID;
             pedido.Total = pago.MontoTotal;
             pedido.Pago = pago;
-            pedido.Status = "Pendiente";
             _context.Add(pedido);
 
             List<DetallePedido> itemsPedido = new List<DetallePedido>();
