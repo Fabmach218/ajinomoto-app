@@ -19,7 +19,8 @@
             </div>
             <div class="col-12 mb-3">
                 <label class="form-label" asp-for="Input.Password">Contraseña</label>
-                <input asp-for="Input.Password" class="form-control tamaño" />
+                <input asp-for="Input.Password" class="form-control tamaño" id="password"/>
+                <input type="checkbox" onclick="mostrarPassword('password')">Mostrar contraseña
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="col-12 mb-3">

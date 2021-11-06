@@ -26,4 +26,13 @@ function redirect(){
     texto.textContent = "Su correo a sido confirmado se le redireccionara a la pagina de inicio en: " + count + " segundos";
   
   }
+
+  function mostrarPassword(campo) {
+    var pass = document.getElementById(campo);
+    if (pass.type === "password") {
+      pass.type = "text";
+    } else {
+      pass.type = "password";
+    }
+  }
    
