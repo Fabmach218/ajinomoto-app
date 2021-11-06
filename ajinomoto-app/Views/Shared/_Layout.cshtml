@@ -13,10 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="~/css/styles.css" />
+   <link rel="stylesheet" href="~/css/styles.css" />
 
 </head>
 <body onload="redireccion();">
+
 
 
      <nav class="navbar navbar-expand-lg navbar-dark bg-white">
@@ -28,7 +29,7 @@
   <line x1="4" y1="12" x2="20" y2="12" />
   <line x1="4" y1="18" x2="20" y2="18" />
 </svg></span></button>
-        <nav class="nav-menu d-none d-lg-block">
+        <nav class="collapse navbar-collapse"  id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 centrar">
                 <li class="nav-item"><a class="nav-link color" aria-current="page" asp-controller="Home" asp-action="Index">INICIO</a></li>
                 <li class="nav-item"><a class="nav-link color" asp-controller="Home" asp-action="Nosotros">NOSOTROS</a></li>
@@ -110,7 +111,6 @@
   
        <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="~/js/script.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
       @await RenderSectionAsync("Scripts", required: false)
@@ -127,7 +127,7 @@
         crossorigin="anonymous"></script>
 
   
-    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
    
 
 </body>
