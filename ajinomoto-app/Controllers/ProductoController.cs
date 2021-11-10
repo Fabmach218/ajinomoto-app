@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ajinomoto_app.Data;
 using ajinomoto_app.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ajinomoto_app.Controllers
 {
@@ -19,11 +20,13 @@ namespace ajinomoto_app.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ListarProducto()
         {
             return View(await _context.DataProductos.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DetalleProducto(int? id)
         {
             if (id == null)
@@ -41,6 +44,7 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult RegistrarProducto()
         {
             return View();
@@ -59,10 +63,12 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult ElegirAccion(){
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> EditarProducto(int? id)
         {
             if (id == null)
@@ -110,8 +116,7 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
-  
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Eliminar(int id)
         {
             var product = await _context.DataProductos.FindAsync(id);
