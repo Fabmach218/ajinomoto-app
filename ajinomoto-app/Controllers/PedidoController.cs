@@ -22,6 +22,16 @@ namespace ajinomoto_app.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        public IActionResult ElegirAccion(){
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult BuscarPedidos(){
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ListarPedidos(string usuario, decimal precioMenor, decimal precioMayor, string fechaMenor, string fechaMayor)
         {   
             var lista = _context.DataPedidos.Include(p => p.Pago);
