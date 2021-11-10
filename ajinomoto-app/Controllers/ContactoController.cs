@@ -24,5 +24,13 @@ namespace ajinomoto_app.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Contacto(Contacto contacto)
+        {
+            _context.Add(contacto);
+            _context.SaveChanges();
+            return View("Confirmacion");
+        }
+
     }
 }
