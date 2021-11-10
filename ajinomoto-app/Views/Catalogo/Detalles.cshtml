@@ -4,33 +4,32 @@
     ViewData["Tittle"] = "Detalles";
     
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <section id="cta" class="cta">
-        <div class="container">
-          <div class="text-center">
-            <h3>DETALLES DEL PRODUCTO</h3>
-          </div>
-        </div>
-    </section>
     <br>
     <br>
-<div class="container">
-    <div class="col-sm-4">
-        <div class="card mb-3">
-        <di class="card-body">
-            <div class="card-img-actions">
-                <img class="img-responsive" width="90" height="140"
+
+
+
+<center><div class="container">
+<div class="card text-center" style="max-width: 50rem;">
+  <div class="card-header">
+     <strong><h5 class="card-title" style="font-size: 20px;" > @Html.DisplayFor(model => model.Nombre)</h5></strong>
+  </div>
+  <div class="card-body">
+                  <div class="card-img-actions">
+                <img class="img-responsive" 
                 src="@Html.DisplayFor(model => model.Imagen)" alt="@Html.DisplayFor(model => model.Imagen)"  />
             </div>
-        </di>
-        <div class="card-body">
-            <h5 class="card-title">@Html.DisplayFor(model => model.Nombre)</h5>
-            <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
-            <h5 class="card-title">@Html.DisplayFor(model => model.Precio)</h5>
-            <a  id="btn" class="btn btn-primary" asp-action="Agregar" asp-controller="Catalogo" asp-route-id="@Model.Id">AGREGAR</a>
-        </div>
-        </div>
-    </div>
+        
+            <p class="card-text"  style="font-size: 15px;">@Html.DisplayFor(model => model.Descripcion)</p>
+            <h5 class="card-title" style="font-size: 15px;">@Html.DisplayFor(model => model.Precio)</h5>
+            <a  id="btn" class="btn btn-primary" asp-action="Agregar" asp-controller="Catalogo" asp-route-id="@Model.Id" style="font-size: 20px;">AGREGAR AL CARRITO</a>
+  </div>
 </div>
+</div></center>
 
+<p>
+    <a asp-action="Catalogo" class="btn btn-info" style="font-size: 15px;">VOLVER AL CATÁLOGO</a>
+</p>
 

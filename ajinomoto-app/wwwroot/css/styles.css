@@ -228,7 +228,7 @@ button {
 
   #hero {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background: url("https://p4.wallpaperbetter.com/wallpaper/803/804/833/food-4k-download-for-pc-wallpaper-preview.jpg") top center;
     background-size: cover;
     position: relative;
@@ -236,7 +236,7 @@ button {
 
   #hero3 {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background: url("https://images7.alphacoders.com/883/thumb-1920-883562.jpg") top center;
     background-size: cover;
     position: relative;
@@ -253,7 +253,7 @@ button {
 
   #hero4 {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background: url("https://images7.alphacoders.com/106/thumb-1920-1069291.jpg") top center;
     background-size: cover;
     position: relative;

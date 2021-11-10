@@ -3,7 +3,7 @@
 @{
     ViewData["Tittle"] = "Catalogo";
 }
-
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <section id="hero" class="d-flex align-items-center justify-content-center">
 
   <div class="container" data-aos="fade-up">
@@ -37,11 +37,12 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <center><h5 class="card-tittle">@Html.DisplayFor(modelItem => item.Nombre)</h5></center>
-                                    <center><p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p></center>
-                                    <center><a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id">AGREGAR</a></center>
+                                    <strong><center><h5 class="card-tittle" style="font-size: 30px;" >@Html.DisplayFor(modelItem => item.Nombre)</h5></center></strong>
+                                  <center><p class="card-text" style="font-size: 20px;">@Html.DisplayFor(modelItem => item.Precio)</p></center>
+                                    <center><a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id" style="font-size: 15px;">AGREGAR</a></center>
+                              
                                     <br>
-                                    <center><a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.Id">VISTA</a></center>
+                                    <center><a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.Id" style="font-size: 15px;" >DETALLES</a></center>
                                 </div>
                             </div>
                         </div>
