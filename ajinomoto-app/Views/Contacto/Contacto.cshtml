@@ -1,0 +1,60 @@
+@model ajinomoto_app.Models.Contacto
+
+@{
+    ViewData["Title"] = "CONTÁCTANOS";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+  <section id="header" class="d-flex align-items-center justify-content-center">
+
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div >
+          <h1>¡PONTE EN CONTACTO CON NOSOTROS!</h1>
+          <br>
+        </div>
+      </div>
+    </div>
+
+ </section>
+
+ <section>
+   <div class="row">
+    <center><div class="col-md-4">
+        <form asp-action="Contacto">
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">NOMBRE:</label>
+                <input asp-for="Nombre" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label">CORREO:</label>
+                <input asp-for="Correo" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                    <label asp-for="Pais">PAÍS</label>
+                    <select id="Pais" name="Pais">
+                    <option value="Perú">PERÚ</option>
+                    <option value="Brasil">BRASIL</option>
+                    <option value="Chile">CHILE</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comentario" class="control-label">COMENTARIO:</label>
+                <textarea asp-for="Comentario" class="form-control" style="height:200px"></textarea>
+
+            </div>
+                <div style="width: 250px">
+                    <button class="btn btn-primary" type="submit">ENVIAR COMENTARIO</button>
+                </div>
+        </form>
+    </div></center>
+</div>
+      
+     
+
+
+ </section>
+
