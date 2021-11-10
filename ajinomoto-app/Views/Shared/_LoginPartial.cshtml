@@ -18,6 +18,11 @@
         <a class="nav-link color" asp-area="" asp-controller="Producto" asp-action="ElegirAccion">PRODUCTO</a>
         <a class="nav-link color" asp-area="" asp-controller="Pedido" asp-action="ElegirAccion">PEDIDO</a>
     </li> 
+        <li class="nav-item">
+
+        <a class="nav-link color" asp-area="" asp-controller="Contacto" asp-action="ListaContacto">Contacto</a>
+    </li> 
+    
 
 
     }
@@ -26,7 +31,7 @@
       
     <li class="nav-item">
 
-        <a class="nav-link color" asp-area="" asp-controller="Proforma" asp-action="Index">CARRITO</a>
+        <a class="nav-link color" asp-area="" asp-controller="Proforma" asp-action="Index">Carrito</a>
     </li> 
 
 
@@ -35,7 +40,7 @@
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link color mt-2">CERRAR SESIÓN <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fd0061" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <button  type="submit" class="nav-link btn btn-link color mt-2">Cerrar Sesión <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fd0061" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
   <path d="M7 12h14l-3 -3m0 6l3 -3" />
@@ -50,10 +55,10 @@ else
 {
     
      <li class="nav-item">
-        <a class="nav-link color" asp-area="Identity" asp-page="/Account/Register">REGÍSTRATE</a>
+        <a class="nav-link color" asp-area="Identity" asp-page="/Account/Register">Regístrate</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link color" asp-area="Identity" asp-page="/Account/Login">INICIAR SESIÓN</a>
+        <a class="nav-link color" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a>
     </li>
 
 }
