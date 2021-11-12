@@ -1,0 +1,31 @@
+@model dynamic
+@using System.Collections.Generic
+
+@{
+    ViewData["Title"] = "DETALLE PEDIDO";
+
+    List<DetallePedido> detalle = new List<DetallePedido>();
+    detalle = @Model.detalle;
+
+    Pedido pedido = new Pedido();
+    pedido = @Model.pedido;
+
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <section id="hero4" class="d-flex align-items-center justify-content-center" style="height: 18px;">
+<h1>DETALLE DEL PEDIDO</h1>
+
+    </section>
+
+<div class="text-center">
+
+    <p>Usuario: @pedido.UserID</p>    
+
+
+
+</div>
+<br>
+  <div>
+    <a asp-action="ListarPedidos" class="btn btn-info" style="font-size: 15px;">RETORNAR A LA LISTA</a>
+</div>
