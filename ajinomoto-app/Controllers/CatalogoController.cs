@@ -48,7 +48,7 @@ namespace ajinomoto_app.Controllers
             if(userID == null){
                 ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
                 List<Producto> productos = new List<Producto>();
-                return  View("Index",productos);
+                return  RedirectToAction("Catalogo");
             }else{
                 var producto = _context.DataProductos.Find(id);
                 Proforma proforma = new Proforma();
