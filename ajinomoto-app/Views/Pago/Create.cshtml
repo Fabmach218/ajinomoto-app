@@ -73,7 +73,7 @@
                     <input type="text" asp-for="Cvv" maxlength="3">
                 </div>
             </div>
-            <center><button type="submit" class="btn btn-dark">REALIZAR PAGO</button></center>
+            <center><button type="submit" class="btn btn-dark" id="envio">REALIZAR PAGO</button></center>
         </form>
 
         <h3>@ViewData["Message"]</h3>
@@ -86,5 +86,25 @@
 
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="~/js/main.js"></script>
+    
+ <script type="text/javascript">
+
+      const btnEnvio = document.querySelector('#envio');
+
+      btnEnvio.addEventListener('click' , () => {
+
+          setTimeout(() => {
+            
+            window.location.href="https://localhost:5001/Pago/Confirmacion";
+
+          } , 3000)
+      })
+       
+
+
+    </script>
+
 </body>
 </html>
+
+

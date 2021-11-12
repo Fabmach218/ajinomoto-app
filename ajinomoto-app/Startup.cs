@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 namespace ajinomoto_app
 {
@@ -42,6 +44,10 @@ namespace ajinomoto_app
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+          
+             services.AddSingleton(typeof(IConverter),
+             new SynchronizedConverter(new PdfTools()));
+    
             services.AddControllersWithViews();
         }
 

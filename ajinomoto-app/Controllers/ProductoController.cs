@@ -9,15 +9,18 @@ using ajinomoto_app.Data;
 using ajinomoto_app.Models;
 using Microsoft.AspNetCore.Authorization;
 
+
 namespace ajinomoto_app.Controllers
 {
     public class ProductoController : Controller
     {
+       
         private readonly ApplicationDbContext _context;
 
         public ProductoController(ApplicationDbContext context)
-        {
+        {  
             _context = context;
+            
         }
 
         [Authorize(Roles = "Admin")]
@@ -129,5 +132,8 @@ namespace ajinomoto_app.Controllers
         {
             return _context.DataProductos.Any(e => e.Id == id);
         }
+
+     
+
     }
 }
