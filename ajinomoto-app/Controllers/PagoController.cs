@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Dynamic;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using System.IO;
 
 namespace ajinomoto_app.Controllers
 {
@@ -52,8 +53,10 @@ namespace ajinomoto_app.Controllers
                 Include(p => p.Producto).
                 Where(p => p.UserID.Equals(pago.UserID) && p.Status.Equals("Pendiente"));
 
+              
 
                  var pdfFile = GeneratePdfReport(itemsProforma.ToList());
+                  MemoryStream stream = new MemoryStream(pdfFile);
             
             Pedido pedido = new Pedido();
             pedido.UserID = pago.UserID;
@@ -83,8 +86,8 @@ namespace ajinomoto_app.Controllers
 
             ViewData["Message"] = "¡PAGO REALIZADO!";
          
-            return File(pdfFile,
-           "application/octet-stream", "Boleta.pdf");
+            return File(stream,
+           "application/pdf", "Boleta.pdf");
             
 
 
