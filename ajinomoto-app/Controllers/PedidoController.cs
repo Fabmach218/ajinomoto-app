@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ajinomoto_app.Models;
 using ajinomoto_app.Data;
 using Microsoft.AspNetCore.Authorization;
+using System.Dynamic;
 
 namespace ajinomoto_app.Controllers
 {
@@ -72,5 +73,20 @@ namespace ajinomoto_app.Controllers
 
             return View(resultado);
         }
+
+        public IActionResult DetallePedido(int id){
+
+            var pedido = _context.DataPedidos.Include(p => p.Pago).Where(p => p.Id == id).ToList();
+            var detalle = _context.DataDetallePedidos.Include(d => d.Producto).Include(d => d.Pedido).Where(d => d.Pedido.Id == id).ToList();
+
+            dynamic model = new ExpandoObject();
+            
+            model.pedido = pedido;
+            model.detalle = detalle;
+
+            return View(model);
+        }
+
+
     }
 }
