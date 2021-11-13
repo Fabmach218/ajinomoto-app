@@ -1,9 +1,10 @@
 @model IEnumerable<ajinomoto_app.Models.Producto>
 
 @{
-    ViewData["Tittle"] = "Catalogo";
+    ViewData["Title"] = "Catálogo";
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
 <section id="hero" class="d-flex align-items-center justify-content-center">
 
   <div class="container" data-aos="fade-up">
@@ -39,7 +40,7 @@
                                 <div class="card-body">
                                     <strong><center><h5 class="card-tittle" style="font-size: 30px;" >@Html.DisplayFor(modelItem => item.Nombre)</h5></center></strong>
                                   <center><p class="card-text" style="font-size: 20px; width: 80px;">@Html.DisplayFor(modelItem => item.Precio)</p></center>
-                                    <center><a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id" style="font-size: 15px;">AGREGAR</a></center>
+                                    <center><a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id" style="font-size: 15px;" onclick="return alert('Producto agregado al carrito')">AGREGAR</a></center>
                               
                                     <br>
                                     <center><a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.Id" style="font-size: 15px;" >DETALLES</a></center>
