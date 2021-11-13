@@ -51,18 +51,22 @@ namespace ajinomoto_app.Controllers
                 return  RedirectToAction("Catalogo");
             }else{
                 var producto = _context.DataProductos.Find(id);
-                Proforma proforma = new Proforma();
+                Proforma proforma;
                 
-                if(_context.DataProforma.FirstOrDefault(p => p.UserID.Equals(userID) && p.Producto == producto).Producto == producto){
-                    proforma = _context.DataProforma.FirstOrDefault(p => p.UserID.Equals(userID) && p.Producto == producto);
-                    proforma.Quantity++;
-                    _context.Update(proforma);
-                }else{
+                Proforma itemProforma = _context.DataProforma.FirstOrDefault(p => p.UserID.Equals(userID) && p.Producto == producto && p.Status.Equals("Pendiente"));
+
+                if(itemProforma == null){
+                    
+                    proforma = new Proforma();
                     proforma.Producto = producto;
                     proforma.Price = producto.Precio;
                     proforma.Quantity = 1;
                     proforma.UserID = userID;
                     _context.Add(proforma);
+                    
+                }else{
+                    itemProforma.Quantity++;
+                    _context.Update(itemProforma);
                 }
                 
                 await _context.SaveChangesAsync();
