@@ -27,6 +27,9 @@
             <th>
                 HORA
             </th>
+            <th>
+                Boleta
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -44,6 +47,11 @@
             </td>
             <td>
                 @item.Pago.FechaPago.ToString("HH:mm")
+            </td>
+
+            <td>
+                   <td> @Html.ActionLink("Descargar", "DownLoadPedidos" , new { id=item.Id }) </td>
+
             </td>
             <td>
 

@@ -52,16 +52,13 @@ namespace ajinomoto_app.Controllers
             itemsProforma = itemsProforma.
                 Include(p => p.Producto).
                 Where(p => p.UserID.Equals(pago.UserID) && p.Status.Equals("Pendiente"));
-
-              
-
-                 var pdfFile = GeneratePdfReport(itemsProforma.ToList());
-                  MemoryStream stream = new MemoryStream(pdfFile);
-            
+                var pdfFile = GeneratePdfReport(itemsProforma.ToList());
+                    
             Pedido pedido = new Pedido();
             pedido.UserID = pago.UserID;
             pedido.Total = pago.MontoTotal;
             pedido.Pago = pago;
+            pedido.archivo = pdfFile;
             _context.Add(pedido);
 
             List<DetallePedido> itemsPedido = new List<DetallePedido>();
@@ -86,9 +83,12 @@ namespace ajinomoto_app.Controllers
 
             ViewData["Message"] = "¡PAGO REALIZADO!";
          
-            return File(stream,
-           "application/pdf", "Boleta.pdf");
             
+
+           // return File(stream,
+           //"application/pdf", "Boleta.pdf");
+            
+            return RedirectToAction("Confirmacion");
 
 
         }

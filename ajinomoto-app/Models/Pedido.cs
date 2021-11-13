@@ -14,6 +14,8 @@ namespace ajinomoto_app.Models
         public String UserID { get; set; }
         public Decimal Total { get; set; } 
         public Pago Pago { get; set; }
+
+         public Byte [] archivo {get; set;}
         
     }
 }

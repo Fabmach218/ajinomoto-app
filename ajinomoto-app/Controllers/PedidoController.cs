@@ -87,6 +87,13 @@ namespace ajinomoto_app.Controllers
             return View(model);
         }
 
+       public IActionResult DownLoadPedidos(int id){
+        
+           var pedidos = _context.DataPedidos.Find(id);
+           return File(pedidos.archivo, "application/octet-stream", "Boleta");  
+          
+
+       }
 
     }
 }
