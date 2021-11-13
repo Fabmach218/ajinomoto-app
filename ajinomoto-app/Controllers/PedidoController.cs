@@ -88,6 +88,7 @@ namespace ajinomoto_app.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Eliminar(int id){
 
             var detalle = _context.DataDetallePedidos.Where(d => d.Pedido.Id == id).ToList();
