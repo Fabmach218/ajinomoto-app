@@ -74,6 +74,7 @@ namespace ajinomoto_app.Controllers
             return View(resultado);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult DetallePedido(int id){
 
             var pedido = _context.DataPedidos.Include(p => p.Pago).FirstOrDefault(p => p.Id == id);
