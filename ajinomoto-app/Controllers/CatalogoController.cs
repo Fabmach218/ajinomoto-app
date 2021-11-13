@@ -52,11 +52,19 @@ namespace ajinomoto_app.Controllers
             }else{
                 var producto = _context.DataProductos.Find(id);
                 Proforma proforma = new Proforma();
-                proforma.Producto = producto;
-                proforma.Price = producto.Precio;
-                proforma.Quantity = 1;
-                proforma.UserID = userID;
-                _context.Add(proforma);
+                
+                if(_context.DataProforma.FirstOrDefault(p => p.UserID.Equals(userID) && p.Producto == producto).Producto == producto){
+                    proforma = _context.DataProforma.FirstOrDefault(p => p.UserID.Equals(userID) && p.Producto == producto);
+                    proforma.Quantity++;
+                    _context.Update(proforma);
+                }else{
+                    proforma.Producto = producto;
+                    proforma.Price = producto.Precio;
+                    proforma.Quantity = 1;
+                    proforma.UserID = userID;
+                    _context.Add(proforma);
+                }
+                
                 await _context.SaveChangesAsync();
                 return  RedirectToAction(nameof(Catalogo));
             }
