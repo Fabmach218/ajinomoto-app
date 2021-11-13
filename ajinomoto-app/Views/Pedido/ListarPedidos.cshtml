@@ -50,13 +50,13 @@
             </td>
 
             <td>
-                   <td> @Html.ActionLink("Descargar", "DownLoadPedidos" , new { id=item.Id }) </td>
+                 @Html.ActionLink("Descargar", "DownLoadPedidos" , new { id=item.Id })
 
             </td>
             <td>
 
                 <a asp-action="DetallePedido" asp-route-id="@item.Id" class="btn btn-secondary" style="font-size: 15px;">DETALLES</a>
-                <a asp-action="Eliminar" asp-route-id="@item.Id" class="btn btn-danger" style="font-size: 15px;">ELIMINAR</a>
+                <a asp-action="Eliminar" asp-route-id="@item.Id" class="btn btn-danger" style="font-size: 15px;" onclick="return confirmation('¿Desea eliminar el pedido?')">ELIMINAR</a>
             
             </td>
         </tr>

@@ -74,9 +74,10 @@ namespace ajinomoto_app.Controllers
             return View(resultado);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult DetallePedido(int id){
 
-            var pedido = _context.DataPedidos.Include(p => p.Pago).Where(p => p.Id == id).ToList();
+            var pedido = _context.DataPedidos.Include(p => p.Pago).FirstOrDefault(p => p.Id == id);
             var detalle = _context.DataDetallePedidos.Include(d => d.Producto).Include(d => d.Pedido).Where(d => d.Pedido.Id == id).ToList();
 
             dynamic model = new ExpandoObject();
@@ -85,6 +86,23 @@ namespace ajinomoto_app.Controllers
             model.detalle = detalle;
 
             return View(model);
+        }
+
+        public IActionResult Eliminar(int id){
+
+            var detalle = _context.DataDetallePedidos.Where(d => d.Pedido.Id == id).ToList();
+
+            foreach (var item in detalle)
+            {
+                _context.Remove(item);
+            }
+
+            var pedido = _context.DataPedidos.FirstOrDefault(p => p.Id == id);
+            _context.Remove(pedido);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(ListarPedidos));
+
         }
 
        public IActionResult DownLoadPedidos(int id){
