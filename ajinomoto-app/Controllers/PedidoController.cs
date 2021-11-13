@@ -76,7 +76,7 @@ namespace ajinomoto_app.Controllers
 
         public IActionResult DetallePedido(int id){
 
-            var pedido = _context.DataPedidos.Include(p => p.Pago).Where(p => p.Id == id).ToList();
+            var pedido = _context.DataPedidos.Include(p => p.Pago).FirstOrDefault(p => p.Id == id);
             var detalle = _context.DataDetallePedidos.Include(d => d.Producto).Include(d => d.Pedido).Where(d => d.Pedido.Id == id).ToList();
 
             dynamic model = new ExpandoObject();
