@@ -88,6 +88,23 @@ namespace ajinomoto_app.Controllers
             return View(model);
         }
 
+        public IActionResult Eliminar(int id){
+
+            var detalle = _context.DataDetallePedidos.Where(d => d.Pedido.Id == id).ToList();
+
+            foreach (var item in detalle)
+            {
+                _context.Remove(item);
+            }
+
+            var pedido = _context.DataPedidos.FirstOrDefault(p => p.Id == id);
+            _context.Remove(pedido);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(ListarPedidos));
+
+        }
+
        public IActionResult DownLoadPedidos(int id){
         
            var pedidos = _context.DataPedidos.Find(id);
