@@ -109,7 +109,13 @@ namespace ajinomoto_app.Controllers
        public IActionResult DownLoadPedidos(int id){
         
            var pedidos = _context.DataPedidos.Find(id);
-           return File(pedidos.archivo, "application/octet-stream", "Boleta.pdf");  
+           byte[] archivo = pedidos.archivo;
+           
+           if(archivo == null){
+               return NotFound();
+           }
+           
+           return File(archivo, "application/octet-stream", "Boleta.pdf");  
           
 
        }
