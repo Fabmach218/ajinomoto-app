@@ -21,7 +21,7 @@ namespace ajinomoto_app.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Catalogo()
+        public async Task<IActionResult> Index()
         {
             var productos = from o in _context.DataProductos select o;
             return View(await productos.ToListAsync());
@@ -47,7 +47,7 @@ namespace ajinomoto_app.Controllers
             var userID = _userManager.GetUserName(User);
             if(userID == null){
                 ViewData["Message"] = "Por favor, debe loguearse antes de agregar un producto";
-                return RedirectToAction("Catalogo");
+                return RedirectToAction("Index");
             }else{
                 var producto = _context.DataProductos.Find(id);
                 Proforma proforma;
