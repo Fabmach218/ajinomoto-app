@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using ajinomoto_app.Models;
 using ajinomoto_app.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ajinomoto_app.Controllers
 {
@@ -33,11 +34,13 @@ namespace ajinomoto_app.Controllers
             return View("Confirmacion");
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ListaContacto()
         {
             return View(await _context.DataContacto.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Eliminar(int id)
         {
             var contacto = await _context.DataContacto.FindAsync(id);

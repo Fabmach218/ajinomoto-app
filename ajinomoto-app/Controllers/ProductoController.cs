@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ajinomoto_app.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
     public class ProductoController : Controller
     {
        
@@ -23,13 +25,11 @@ namespace ajinomoto_app.Controllers
             
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ListarProducto()
         {
             return View(await _context.DataProductos.ToListAsync());
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DetalleProducto(int? id)
         {
             if (id == null)
@@ -47,7 +47,6 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult RegistrarProducto()
         {
             return View();
@@ -66,12 +65,10 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult ElegirAccion(){
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> EditarProducto(int? id)
         {
             if (id == null)
@@ -119,7 +116,6 @@ namespace ajinomoto_app.Controllers
             return View(producto);
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Eliminar(int id)
         {
             

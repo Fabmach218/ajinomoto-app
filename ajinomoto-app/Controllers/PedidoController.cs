@@ -12,6 +12,8 @@ using System.Dynamic;
 
 namespace ajinomoto_app.Controllers
 {
+
+    [Authorize(Roles = "Admin")]
     public class PedidoController : Controller
     {
         
@@ -22,17 +24,14 @@ namespace ajinomoto_app.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult ElegirAccion(){
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult BuscarPedidos(){
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult ListarPedidos(string usuario, decimal precioMenor, decimal precioMayor, string fechaInicio, string fechaFin)
         {   
             var lista = _context.DataPedidos.Include(p => p.Pago).ToList();
@@ -74,7 +73,6 @@ namespace ajinomoto_app.Controllers
             return View(resultado);
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult DetallePedido(int id){
 
             var pedido = _context.DataPedidos.Include(p => p.Pago).FirstOrDefault(p => p.Id == id);
@@ -88,7 +86,6 @@ namespace ajinomoto_app.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult Eliminar(int id){
 
             var detalle = _context.DataDetallePedidos.Where(d => d.Pedido.Id == id).ToList();
