@@ -18,11 +18,10 @@
 
     </section>
 
-<div class="text-center">
-
     <p>Usuario: @pedido.UserID</p>    
     <p>Fecha y hora: @pedido.Pago.FechaPago.ToString("dd-MM-yyyy HH:mm")</p>
 
+<div class="text-center">
     <table class="table table-striped " style="font-size: 18px;">
     <thead class="thead-dark">
         <tr>
@@ -43,9 +42,17 @@
     <tbody>
 @foreach (DetallePedido item in Model.detalle) {
         <tr>
-            <td>
-                @item.Producto.Nombre
-            </td>
+
+                @if(item.Producto == null){
+                    <td class="text-danger">
+                        (PRODUCTO ELIMINADO)
+                    </td>
+                }else{
+                    <td>
+                        @item.Producto.Nombre
+                    </td>
+                }
+
             <td>
                 @item.Cantidad
             </td>
@@ -55,6 +62,7 @@
             <td>
                 S/. @(item.Precio * item.Cantidad)
             </td>
+        
         </tr>
 }
         <tr>
@@ -65,6 +73,9 @@
     </tbody>
 </table> 
 
+<div>
+    <a asp-action="DownLoadPedidos" asp-route-id="@pedido.Id" class="btn btn-info" style="font-size: 15px;">DESCARGAR PDF</a>
+</div>
 
 </div>
 <br>

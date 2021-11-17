@@ -122,6 +122,19 @@ namespace ajinomoto_app.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Eliminar(int id)
         {
+            
+            var detalles = _context.DataDetallePedidos.Where(d => d.Producto.Id == id);
+            
+            foreach(var item in detalles){
+                item.Producto = null;
+            }
+
+            var proformas = _context.DataProforma.Where(p => p.Producto.Id == id);
+
+            foreach(var item in proformas){
+                _context.DataProforma.Remove(item);
+            }
+
             var product = await _context.DataProductos.FindAsync(id);
             _context.DataProductos.Remove(product);
             await _context.SaveChangesAsync();
