@@ -21,9 +21,19 @@ namespace ajinomoto_app.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string producto)
         {
-            var productos = from o in _context.DataProductos select o;
+
+            IQueryable<Producto> productos;
+
+            if(producto == null){
+                productos = from o in _context.DataProductos select o;
+            }else{
+                producto = producto.ToUpper();
+                productos = _context.DataProductos.Where(p => p.Nombre.Contains(producto));
+            }
+
+            
             return View(await productos.ToListAsync());
         }
 
